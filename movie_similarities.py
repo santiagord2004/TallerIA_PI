@@ -5,7 +5,7 @@ from openai import OpenAI
 #from openai.embeddings_utils import get_embedding, cosine_similarity
 import numpy as np
 
-_ = load_dotenv('api_keys.env')
+_ = load_dotenv('api.env')
 client = OpenAI(
     # This is the default and can be omitted
     api_key=os.environ.get('openai_api_key'),
@@ -52,9 +52,9 @@ print(movies[20]['title'])
 #Calculamos la similitud de coseno entre los embeddings de las descripciones de las películas. Entre más alta la similitud
 #más parecidas las películas.
 
-print(f"Similitud entre película {movies[27]['title']} y {movies[3]['title']}: {cosine_similarity(movies[27]['embedding'],movies[3]['embedding'])}")
-print(f"Similitud entre película {movies[27]['title']} y {movies[20]['title']}: {cosine_similarity(movies[27]['embedding'],movies[20]['embedding'])}")
-print(f"Similitud entre película {movies[20]['title']} y {movies[3]['title']}: {cosine_similarity(movies[20]['embedding'],movies[3]['embedding'])}")
+#print(f"Similitud entre película {movies[27]['title']} y {movies[3]['title']}: {cosine_similarity(movies[27]['embedding'],movies[3]['embedding'])}")
+#print(f"Similitud entre película {movies[27]['title']} y {movies[20]['title']}: {cosine_similarity(movies[27]['embedding'],movies[20]['embedding'])}")
+#print(f"Similitud entre película {movies[20]['title']} y {movies[3]['title']}: {cosine_similarity(movies[20]['embedding'],movies[3]['embedding'])}")
 
 #Si se tuviera un prompt por ejemplo: Película de la segunda guerra mundial, podríamos generar el embedding del prompt y comparar contra 
 #los embeddings de cada una de las películas de la base de datos. La película con la similitud más alta al prompt sería la película
